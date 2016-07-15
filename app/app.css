@@ -1,0 +1,9 @@
+.disabled {
+	opacity: 0.3;
+	pointer-events: none;
+}
+.list-group-item .btn { margin:0 0 0 5px; }
+.list-group-item.complete .content {
+	color:green;
+	text-decoration: line-through;
+}
