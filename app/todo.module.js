@@ -51,6 +51,7 @@
 		getTodoList();
 
 		function insertTodo(obj){
+			obj.priority = $scope.todos.length;
 			$scope.todos.push(obj)
 		}
 

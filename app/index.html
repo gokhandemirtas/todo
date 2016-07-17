@@ -15,18 +15,18 @@
 						<div class="panel-heading">Make a list of todo's</div>
 						<div class="panel-body">
 
-							<ul class="list-group">
-							  <li class="list-group-item clearfix" ng-repeat="todo in todos" ng-class="{'complete':todo.isComplete}">
+							<ol class="list-group">
+							  <li class="list-group-item clearfix" ng-repeat="todo in todos | orderBy : 'isComplete'" ng-class="{'complete':todo.isComplete}">
 							  	<span class="content">{{ todo.content }}</span>
 							  	<a class="btn btn-warning btn-xs pull-right" ng-click="deleteTodo(todo._id)">
 							  		<span class="glyphicon glyphicon-remove"></span>
 							  	</a>
-							  	<a class="btn btn-success btn-xs pull-right" ng-click="updateTodo(todo)"
-							  		ng-class="{'btn-success':!todo.isComplete, 'btn-default':todo.isComplete}">
+							  	<a class="btn btn-xs pull-right" ng-click="updateTodo(todo)"
+							  		ng-class="{'btn-success':todo.isComplete, 'btn-default':!todo.isComplete}">
 							  		<span class="glyphicon glyphicon-ok"></span>
 							  	</a>
 							  </li>
-							</ul>
+							</ol>
 							<div class="alert alert-info" ng-show="todos.length === 0">
 								<p>You don't have any to-do's. Type your notes to the text field below</p>
 							</div>
